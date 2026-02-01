@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Zen/Calming Palette - Soft Blues, Greens, and Sand */
+  --font-sans: 'DM Sans', sans-serif;
+  --font-display: 'Playfair Display', serif;
+
+  --background: 210 20% 98%;      /* Very light cool gray */
+  --foreground: 215 25% 27%;      /* Soft dark blue-gray */
+  
+  --primary: 187 42% 45%;         /* Muted teal/sage */
+  --primary-foreground: 210 40% 98%;
+  
+  --secondary: 35 30% 92%;        /* Warm sand/beige for cards */
+  --secondary-foreground: 215 25% 27%;
+  
+  --muted: 210 20% 92%;
+  --muted-foreground: 215 15% 50%;
+  
+  --accent: 195 40% 85%;          /* Soft water blue */
+  --accent-foreground: 215 25% 27%;
+  
+  --destructive: 0 50% 65%;       /* Muted red */
+  --destructive-foreground: 210 40% 98%;
+  
+  --border: 210 20% 88%;
+  --input: 210 20% 96%;
+  --ring: 187 42% 45%;
+  
+  --radius: 1rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/20;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-wide;
+  }
+}
+
+/* Custom scrollbar for webkit */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/20 rounded-full hover:bg-muted-foreground/30 transition-colors;
+}
